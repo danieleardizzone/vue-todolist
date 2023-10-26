@@ -12,12 +12,13 @@
 
         <div class="container">
             <div class="add-task">
-                <input type="text" v-model="inputValue">
+                <input type="text" v-model.trim="inputValue">
                 <button @click="addTask(inputValue)">Aggiungi</button>
             </div>
             <ul id="list">
                 <li class="list-item" v-for="(task, index) in todos">
-                    <span :class="task.done === true ? 'done' : '' ">
+                    <span :class="task.done === true ? 'done' : '' "
+                    @click="changeTaskStatus(task)">
                         {{ task.text }}
                     </span>
                     <span class="deletes-task"

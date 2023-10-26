@@ -2,6 +2,7 @@
     text-decoration: line-through;
 }
 
-.deletes-task {
+.deletes-task, 
+.list-item {
     cursor: pointer;
 }

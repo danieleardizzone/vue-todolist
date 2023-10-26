@@ -40,13 +40,31 @@ createApp({
             ]
         }
     }, methods: {
-
+        
         addTask(inputValue) {
             console.log(this.inputValue)
+
+            if(inputValue !== ''){
+                const myObject = {
+                    text: inputValue,
+                    done: false
+                }
+    
+                this.todos.push(myObject)
+    
+                this.inputValue = ''
+            } else {
+                alert('riprova')
+            }
+
         },
 
         deletesTask(index) {
             this.todos.splice(index, 1)
+        },
+
+        changeTaskStatus(task){
+            task.done = !task.done;
         }
     }, mounted() {
         console.log('VUE OK')
